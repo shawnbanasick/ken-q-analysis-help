@@ -9,13 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Ken-Q Analysis Help - Data</title>
+    <title>Ken-Q Analysis User Guide - Data</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -26,6 +27,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/picturefill.min.js" async></script>
 
 </head>
 
@@ -43,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Ken-Q Analysis Help</a>
+                <a class="navbar-brand" href="index.html">User Guide</a>
             </div>
 
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -82,40 +85,187 @@
 
             <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
+                <div class="page-width-container">
+
+                    <!-- Page Heading -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
                             Data
-                            <small>How to add data to Ken-Q Analysis</small>
+                            <br />
+                            <small>How to add data</small>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i> <a href="index.html">Overview</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> 1. Data
-                            </li>
-                        </ol>
+                        </div>
                     </div>
+                    <!-- /.row -->
+
+                    <!-- INTRODUCTION -->
+                    <!-- <div class="alert alert-info">
+                    <h4>Ken-Q analysis makes it easy to manually input Q-sorts, or to import data from other software.</h4>
+                </div> -->
+
+
+                    <!-- USER INPUT -->
+                    <div class="page-header">
+                        <h1>User Input</h1>
+                    </div>
+
+                    <!-- PQMETHOD -->
+                    <div class="page-header">
+                        <h1>PQMethod DAT file</h1>
+                    </div>
+
+                    <!-- EXCEL FILES -->
+                    <div class="page-header">
+                        <h1>MS Excel file</h1>
+                    </div>
+                    <div>
+                        <!-- class="alert alert-info" -->
+                        <h3 class="lead">Ken-Q Analysis can import Excel files in three formats</h3>
+                        <ul class="lead">
+                            <li>
+                                Type 1 - Q-sort data arranged by Q-sort value
+                            </li>
+                            <li>
+                                Type 2 - Q-sort data arranged by statement number
+                            </li>
+                            <li>
+                                Type 3 - Ken-Q Analysis output file created during a previous session
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- UNFORCED SORT WARNING -->
+                    <div class="alert alert-warning util-margin-bottom-med">
+                        <h4>For projects with unforced (non-symmetric) Q-sorts, use the Excel Type 2 format or a PQMethod DAT file.</h4>
+                    </div>
+
+                    <!-- TYPE 1 -->
+                    <div class="alert alert-info">
+                        <h4 class="lead util-margin-bottom-small">
+                    <strong>Type 1</strong> - This format is the best choice when importing hand-written Q-sort information with forced (symmetric) Q-sorts.
+                    </h4>
+
+                        <!-- HOW TO DOWNLOAD TYPE 1-->
+                        <div class="well util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 1.1</strong> -- Download a copy of the Type 1 <a target="_blank" style="target-new: tab;" href="https://docs.google.com/spreadsheets/d/1zQIvqt25t6VdJfTnyJWr7vSZieEMiW-k_cLJW1EIV5E/edit?usp=sharing"><i class="fa fa-fw fa-table"></i><strong>sample file</strong></a> from Google Sheets</h4>
+                            <img class="hasBorder fitWidth" srcset="images/downloadExcelExampleFile-mid.png 875w,
+                        images/downloadExcelExampleFile-small.png 400w" alt="Download Excel File from Google">
+                        </div>
+
+                        <!-- ADD PROJECT NAME FOR TYPE 1-->
+                        <h4 class="well well-border-blue lead util-margin-bottom-small"><strong>Step 1.2</strong> -- Add the project name to cell B2</h4>
+
+                        <!-- ADD Q-SORT SHAPE FOR TYPE 1-->
+                        <div class="well util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 1.3</strong> -- Describe the shape of the Q-sort</h4>
+
+                            <img class="hasBorder fitWidth util-margin-bottom-none" srcset="images/excelType1Example1-mid.png 1200w,
+                        images/excelType1Example1-small.png 520w" alt="Describe the shape of the Q-sort">
+                        </div>
+
+                        <!-- ADD MULTIPLIER ARRAY SHAPE FOR TYPE 1-->
+                        <div class="well util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 1.4</strong> -- Add the Q-sort values from your project's Q-sort design</h4>
+
+                            <img class="hasBorder fitWidth" srcset="images/excelType1Example1B-mid.png 1200w,
+                        images/excelType1Example1B-small.png 520w" alt="Download Excel File from Google">
+                        </div>
+
+                        <!-- ADD Q-SORT DATA FOR TYPE 1-->
+                        <div class="well util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 1.5</strong> -- Add the respondents' Q-sort data</h4>
+
+                            <img class="hasBorder fitWidth" srcset="images/excelType1Example2-mid.png 1200w,
+                        images/excelType1Example2-small.png 520w" alt="Download Excel File from Google">
+                        </div>
+
+                        <!-- ADD STATEMENTS FOR TYPE 2 -->
+                        <div class="util-margin-top-small util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 1.6</strong> -- Add statements to the Statements tab of the worksheet</h4>
+                            <img class="hasBorder fitWidth" srcset="images/excelStatementsExample-mid.png 1554w,
+                            images/excelStatementsExample-small.png 500w" alt="Add statements to worksheet">
+                        </div>
+
+                        <!-- UPLOAD WORKBOOK TO KEN-Q -->
+                        <h4 class="well well-border-blue lead util-margin-bottom-small"><strong>Step 1.7</strong> -- Upload the workbook to Ken-Q</h4>
+
+                    </div>
+
+                    <!-- TYPE 2 -->
+                    <div class="alert alert-info util-margin-top-large">
+                        <h4 class="lead util-margin-bottom-small">
+                    <strong>Type 2</strong> - This format is the best choice when importing unforced (non-symmetric) Q-sort data or data from another software application.
+                    </h4>
+
+                        <!-- HOW TO DOWNLOAD TYPE 2-->
+                        <div class="util-margin-top-small util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 2.1</strong> -- Download a copy of the Type 2 <a target="_blank" style="target-new: tab;" href="https://docs.google.com/spreadsheets/d/15-Xq4lJl7ahVyQ6dwiMyxU4TsitqFpSvWoWXdOgR3r0/edit?usp=sharing"><i class="fa fa-fw fa-table"></i><strong>sample file</strong></a> from Google Sheets</h4>
+
+                            <img class="hasBorder fitWidth" srcset="images/downloadExcelExampleFile-mid.png 875w,
+                        images/downloadExcelExampleFile-small.png 500w" alt="Download Excel File from Google">
+                        </div>
+
+                        <!-- ADD PROJECT NAME FOR TYPE 2-->
+                        <h4 class="well well-border-blue lead util-margin-bottom-small"><strong>Step 2.2</strong> -- Add the project name to cell A2</h4>
+
+                        <!-- ADD Q-SORT SHAPE FOR TYPE 2-->
+                        <div class="util-margin-top-small util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 2.3</strong> -- Add the Q-sort values from your project's Q-sort design</h4>
+
+                            <img class="hasBorder fitWidth" srcset="images/excelType2Example1-mid.png 1553w,
+                        images/excelType2Example1-small.png 500w" alt="Download Excel File from Google">
+                        </div>
+
+                        <!-- ADD Q-SORTS FOR TYPE 2 -->
+                        <div class="util-margin-top-small util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 2.4</strong> -- Add respondents' Q-sort data values by statement number (s1, s2, s3, etc...)</h4>
+                            <img class="hasBorder fitWidth" srcset="images/excelType2Example2-mid.png 1554w,
+                        images/excelType2Example2-small.png 500w" alt="Download Excel File from Google">
+                        </div>
+
+                        <!-- ADD Q-SORTS FOR TYPE 2 -->
+                        <div class="util-margin-top-small util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 2.5</strong> -- Non-symmetric Q-sorts will be listed by respondent id</h4>
+                            <img class="hasBorder fitWidth" srcset="images/excelType2Example3-mid.png 1554w,
+                        images/excelType2Example3-small.png 500w" alt="Download Excel File from Google">
+                        </div>
+
+                        <!-- ADD STATEMENTS FOR TYPE 2 -->
+                        <div class="util-margin-top-small util-margin-bottom-med">
+                            <h4 class="well well-border-blue lead util-margin-bottom-none"><strong>Step 2.6</strong> -- Add statements to the Statements tab of the worksheet</h4>
+                            <img class="hasBorder fitWidth" srcset="images/excelStatementsExample-mid.png 1554w,
+                        images/excelStatementsExample-small.png 500w" alt="Add statements to worksheet">
+                        </div>
+
+                        <!-- UPLOAD WORKBOOK TO KEN-Q -->
+                        <h4 class="well well-border-blue lead util-margin-bottom-small"><strong>Step 2.7</strong> -- Upload the workbook to Ken-Q</h4>
+                    </div>
+
+
+                    <!-- JSON FILES -->
+                    <div class="page-header util-margin-top-med">
+                        <h1>JSON file from Easy HTMLQ</h1>
+                    </div>
+
+
+
+                    <!-- page-width-container -->
                 </div>
-                <!-- /.row -->
 
+                <!-- /.container-fluid -->
             </div>
-            <!-- /.container-fluid -->
 
+            <!-- /#page-wrapper -->
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
 
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+        <!-- jQuery -->
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
 
 </body>
+
+</html>
+y>
 
 </html>
